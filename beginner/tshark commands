@@ -1,0 +1,6 @@
+tshark -r dns.cap
+tshark -r dns.cap | wc -l
+tshark -r dns.cap -Y "dns.qry.type == 1"
+tshark -r dns.cap -Y "dns.qry.type == 1" -T fields -e dns.>
+tshark -r dnsexfil.pcap -Y "dns.flags.response == 0" | wc >
+tshark -r dnsexfil.pcap -Y "dns.id"
